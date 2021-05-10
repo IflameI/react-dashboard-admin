@@ -1,0 +1,87 @@
+.table {
+  &__row {
+    @include flexbox();
+  }
+  &__column {
+    flex: 1 1 100%;
+    width: 100%;
+  }
+  &__item {
+    background: rgba(0, 0, 0, 0.24);
+    box-shadow: 0 25px 20px -20px RGBA(0 0 0 / 10%), 0 0 15px RGBA(0 0 0 / 6%);
+    padding: 15px;
+    border-radius: 10px;
+  }
+  &__footer {
+    font-size: 16px;
+    color: rgba(244, 244, 245, 0.6);
+    padding: 10px 0;
+  }
+}
+.table-main {
+  border-collapse: collapse;
+  &__head {
+    font-size: 0.875rem;
+    text-align: left;
+  }
+  thead th {
+    vertical-align: bottom;
+    border-bottom: 2px solid rgba(51, 51, 51, 0.35);
+    padding: 0.75rem;
+    color: #c1c3cf;
+  }
+  & tbody tr:nth-of-type(odd) {
+    background-color: rgba(0, 0, 0, 0.24);
+  }
+  & tbody td {
+    padding: 0.75rem;
+    vertical-align: top;
+    font-weight: 600;
+    color: #c1c3cf;
+    border: none;
+    font-size: 14px;
+  }
+  & tbody td p {
+    font-size: 14px;
+  }
+}
+
+.widgets-table {
+  padding-top: 25px;
+  &__row {
+    @include flexbox();
+    margin: 0 -15px;
+  }
+  &__column {
+    padding: 0 15px;
+    flex: 0 1 50%;
+  }
+  &__item {
+    margin-bottom: 25px;
+  }
+  &__main {
+    thead {
+      font-size: 14px;
+      color: #c1c3cf;
+      tr th {
+        text-align: left;
+        padding: 0.875rem;
+      }
+    }
+    tbody td {
+      font-size: 14px;
+      padding: 0.75rem;
+      vertical-align: top;
+      border-top: 1px solid rgba(51, 51, 51, 0.35);
+    }
+  }
+  &__subtitle {
+    padding: 10px 0;
+  }
+  &__text {
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: rgba(244, 244, 245, 0.6);
+    line-height: 20px;
+  }
+}

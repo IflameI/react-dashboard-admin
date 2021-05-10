@@ -1,0 +1,73 @@
+.notifications-block {
+  &__row {
+    @include flexbox();
+    margin: 0 -10px;
+  }
+  &__column {
+    flex: 0 1 33.333%;
+    padding: 0 10px;
+    color: rgba(244, 244, 245, 0.6);
+  }
+  &__subtitle {
+    padding-top: 10px;
+    margin-bottom: 10px;
+  }
+  &__text {
+    margin-bottom: 15px;
+  }
+  &__selector {
+    .location-selector {
+      width: 100%;
+      height: 220px;
+      border: 1px dashed #474d84;
+      background-color: #040620;
+      position: relative;
+      .bit {
+        transition: background-color 0.15s ease-in-out;
+        background-color: #474d84;
+        cursor: pointer;
+        position: absolute;
+      }
+    }
+  }
+  &__buttons {
+    button {
+      margin-bottom: 10px;
+    }
+  }
+  &__code {
+    background: #040620;
+    color: rgba(244, 244, 245, 0.6);
+    border: none;
+  }
+  &__code-title {
+    margin-bottom: 10px;
+  }
+}
+
+.bit.top {
+  top: 0;
+  margin: 0 40%;
+  height: 20%;
+  width: 20%;
+}
+.bit.bottom {
+  bottom: 0;
+  height: 20%;
+  width: 20%;
+  margin: 0 40%;
+}
+.bit.left {
+  height: 20%;
+  width: 20%;
+  margin-left: 0;
+  margin-right: 0;
+  left: 0;
+}
+.bit.right {
+  right: 0;
+  height: 20%;
+  width: 20%;
+  margin-left: 0;
+  margin-right: 0;
+}

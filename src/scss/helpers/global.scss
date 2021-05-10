@@ -1,0 +1,361 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 300;
+}
+h1 {
+  font-size: 2.5rem;
+}
+h2 {
+  font-size: 2rem;
+}
+h3 {
+  font-size: 1.75rem;
+}
+h4 {
+  font-size: 1.5rem;
+}
+h5 {
+  font-size: 1.25rem;
+}
+h6 {
+  font-size: 1rem;
+}
+
+.text-danger {
+  color: #db2a34 !important;
+}
+.text-warning {
+  color: #e49400 !important;
+}
+.text-lime {
+  color: #8cbf26 !important;
+}
+.text-success {
+  color: #2d8515 !important;
+}
+.text-primary {
+  color: #2477ff !important;
+}
+.text-info {
+  color: #4179cf !important;
+}
+h1 small,
+h2 small,
+h3 small,
+h4 small,
+h5 small,
+h6 small {
+  color: RGBA(244, 244, 245, 0.7);
+}
+.display-1 {
+  font-size: 6rem;
+  font-weight: 300;
+}
+.display-2 {
+  font-size: 5.5rem;
+  font-weight: 300;
+}
+.display-3 {
+  font-size: 4.5rem;
+  font-weight: 300;
+}
+.display-4 {
+  font-size: 3.5rem;
+  font-weight: 300;
+}
+
+code {
+  font-size: 85%;
+  background-color: rgba(36, 119, 255, 0.3);
+  color: #2d8515;
+  padding: 2px;
+  border-radius: 0.3rem;
+}
+.lead {
+  font-size: 1.25rem;
+  font-weight: 300;
+}
+
+.mark,
+mark {
+  padding: 0.2em;
+  background-color: #fcf8e3;
+}
+.p-normal {
+  font-weight: 400;
+}
+.p-semi-bold {
+  font-weight: 600;
+}
+.p-bold {
+  font-weight: 700;
+}
+.blockquote {
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+}
+blockquote {
+  margin: 0 0 1rem;
+}
+.blockquote-footer {
+  display: block;
+  font-size: 80%;
+  color: #798892;
+}
+
+.header__global {
+  @include flexbox();
+  align-items: center;
+  h5 {
+    color: rgba(244, 244, 245, 0.9);
+    flex: 1 1 auto;
+  }
+  div {
+    button {
+      background: transparent;
+      font-size: 19px;
+      color: #c1c3cf;
+      svg {
+        fill: #c1c3cf;
+        width: 12px;
+        height: 12px;
+        margin-right: 5px;
+      }
+    }
+  }
+}
+.table-main {
+  color: inherit;
+}
+.table-main {
+  width: 100%;
+  margin-bottom: 1rem;
+  color: #29323a;
+}
+table > thead > tr > th {
+  border-top: none !important;
+  border-bottom-width: 1px !important;
+  text-transform: uppercase;
+}
+.table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.abc-checkbox {
+  cursor: default;
+  padding-left: 4px;
+}
+
+.abc-checkbox input[type='checkbox'],
+.abc-checkbox input[type='radio'] {
+  position: static;
+  margin-left: 0;
+  cursor: pointer;
+  opacity: 0;
+  z-index: 1;
+}
+
+.form-check-input {
+  margin-top: 0.3rem;
+}
+
+.abc-checkbox label {
+  cursor: pointer;
+  display: inline;
+  vertical-align: top;
+  position: relative;
+  padding-left: 5px;
+}
+label {
+  margin-bottom: 0.5rem;
+  font-weight: 400;
+}
+
+div.abc-checkbox label:before {
+  background: none;
+  border-color: #aaa;
+}
+
+.abc-checkbox label:before {
+  cursor: pointer;
+  content: '';
+  display: inline-block;
+  position: absolute;
+  width: 17px;
+  height: 17px;
+  top: 2px;
+  left: 0;
+  margin-left: -1.25rem;
+  border: 1px solid #f4f4f5;
+  border-radius: 3px;
+  background-color: #fff;
+  transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
+}
+
+.abc-checkbox input[type='checkbox']:checked + label:after,
+.abc-checkbox input[type='radio']:checked + label:after {
+  content: url('../../img/icons/checkbox.png');
+  width: 14px;
+  height: 14px;
+}
+
+div.abc-checkbox label:after {
+  color: #eee;
+}
+.abc-checkbox label:after {
+  cursor: pointer;
+  display: inline-block;
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  left: 0;
+  top: 2px;
+  margin-left: -1.25rem;
+  padding-left: 3px;
+  padding-top: 1px;
+  font-size: 11px;
+  color: #495057;
+}
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: rgba(0, 0, 0, 0.24);
+}
+
+.badge {
+  padding: 4px 8px;
+  font-weight: 600;
+  font-size: 14px;
+}
+.badge-danger,
+.badge-info,
+.badge-success,
+.badge-warning {
+  color: #f4f4f5;
+}
+
+.badge-danger {
+  color: #f4f4f5;
+  background-color: #db2a34;
+}
+
+.badge {
+  display: inline-block;
+  font-size: 0.875em;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: initial;
+  border-radius: 0.3rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.badge-gray {
+  color: #f4f4f5;
+  background-color: #595d78;
+}
+
+.badge-warning {
+  color: #f4f4f5;
+  background-color: #e49400;
+}
+.badge-primary {
+  color: #f4f4f5;
+  background-color: #2477ff;
+}
+.badge-green {
+  color: #f4f4f5;
+  background-color: #2d8515;
+}
+
+.table-hover tbody tr:hover {
+  color: #29323a;
+  background-color: rgba(0, 0, 0, 0.075);
+  @include anim(0.3s, 0s);
+}
+
+.table-bordered,
+.table-bordered td,
+.table-bordered th {
+  border: 1px solid rgba(51, 51, 51, 0.35);
+}
+
+.widgets-table__wrapper-separate {
+  margin-top: 20px;
+}
+
+.widget-table-overflow {
+  margin: 0 -14px -15px;
+}
+.wrapper-global {
+  background: rgba(0, 0, 0, 0.24);
+  box-shadow: 0 25px 20px -20px RGBA(0 0 0 / 10%), 0 0 15px RGBA(0 0 0 / 6%);
+  padding: 15px;
+  border-radius: 10px;
+}
+
+pre {
+  display: block;
+  padding: 6.5px;
+  margin: 0 0 0.5rem;
+  font-size: 13px;
+  line-height: 1rem;
+  word-break: break-all;
+  word-wrap: break-word;
+  color: #29323a;
+  background-color: #f8f9fa;
+  border: 1px solid #c1ccd3;
+  border-radius: 0.3rem;
+  white-space: pre-line;
+}
+
+pre code {
+  word-break: normal;
+  color: rgba(244, 244, 245, 0.6);
+  background-color: transparent;
+}
+
+.btn {
+  display: inline-block;
+  font-weight: 400;
+  color: #29323a;
+  text-align: center;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: initial;
+  border: 1px solid transparent;
+  padding: 0.5rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 0.3rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.btn-primary {
+  color: #f4f4f5;
+  background-color: #2477ff;
+  border-color: #2477ff;
+  box-shadow: inset 0 1px 0 RGBA(244 244 245 / 15%), 0 1px 1px RGBA(0 0 0 / 8%);
+}
+
+.btn-danger {
+  color: #f4f4f5;
+  background-color: #db2a34;
+  border-color: #db2a34;
+  box-shadow: inset 0 1px 0 RGBA(244 244 245 / 15%), 0 1px 1px RGBA(0 0 0 / 8%);
+}
+
+.btn-success {
+  color: #f4f4f5;
+  background-color: #2d8515;
+  border-color: #2d8515;
+  box-shadow: inset 0 1px 0 RGBA(244 244 245 / 15%), 0 1px 1px RGBA(0 0 0 / 8%);
+}

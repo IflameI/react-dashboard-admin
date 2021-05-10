@@ -1,0 +1,565 @@
+//<МИКСИНЫ>===============================================================================================
+@import 'helpers/mixins.scss';
+//</МИКСИНЫ>===============================================================================================
+
+//<ШРИФТЫ>===============================================================================================
+
+//<Подключаем шрифты>=======================================================================================
+
+//</Подключаем шрифты>=======================================================================================
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap');
+
+//<Иконочные шрифты>==========================================================================================
+
+//</Иконочные шрифты>==========================================================================================
+
+//<Шрифт по умолчанию>==========================================================================================
+$fontfamily: 'Open Sans';
+//</Шрифт по умолчанию>==========================================================================================
+
+//</ШРИФТЫ>=======================================================================================================
+
+//<ПЕРЕМЕННЫЕ>===========================================================================================================
+$minwidth: 320px;
+$mw: 1140;
+$md1: $mw + 12;
+$md2: 991.98;
+$md3: 767.98;
+$md4: 479.98;
+//</ПЕРЕМЕННЫЕ>===========================================================================================================
+
+//<ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>===============================================================================================
+@import 'helpers/null.scss';
+body {
+  font-size: 14px;
+  color: rgba(244, 244, 245, 0.9);
+  background: radial-gradient(farthest-side ellipse at 10% 0, #333867 20%, #17193b);
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  &.lock {
+    overflow: hidden;
+  }
+}
+//</ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>===============================================================================================
+
+//<ОБОЛОЧКА>===========================================================================================================
+.wrapper {
+  width: 100%;
+  min-height: 100%;
+  overflow: hidden;
+}
+//</ОБОЛОЧКА>===========================================================================================================
+
+//<ОСНОВНАЯ СЕТКА>===========================================================================================================
+.container {
+  max-width: $mw + px;
+  margin: 0 auto;
+  width: 100%;
+  @media (max-width: $md1+px) {
+    max-width: 970px;
+  }
+  @media (max-width: $md2+px) {
+    max-width: 750px;
+  }
+  @media (max-width: $md3+px) {
+    max-width: none;
+    padding: 0 10px;
+  }
+}
+//</ОСНОВНАЯ СЕТКА>===========================================================================================================
+
+//<ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>====================================================================================================
+@import 'components/header.scss';
+@import 'helpers/global.scss';
+@import 'components/typography.scss';
+@import 'components/table.scss';
+@import 'components/notifications.scss';
+@import 'components/login.scss';
+
+//</ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>====================================================================================================
+
+//<ОСНОВНОЙ БЛОК>====================================================================================================
+
+//====================================================================================================
+.sidebar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 200px;
+  min-height: 100vh;
+  margin-left: 15px;
+
+  &__logo {
+    font-size: 18px;
+    width: 100%;
+    font-weight: 400;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 20px 0 55px;
+    a {
+      color: #c1c3cf;
+      padding: 0 5px;
+    }
+    span {
+      font-weight: 700;
+    }
+  }
+  &__top {
+    padding-bottom: 10px;
+  }
+  &__link {
+    a {
+      font-weight: 600;
+      font-size: 16px;
+      color: #c1c3cf;
+      position: relative;
+      align-items: center;
+      padding: 13px 20px 13px 20px;
+      border-top: 1px solid transparent;
+      white-space: nowrap;
+
+      @include flexbox();
+      justify-content: left;
+      cursor: pointer;
+      @media (min-width: $md2+px) {
+        &:hover {
+          @include anim(0.3s, 0s);
+          color: #3979f6;
+          svg {
+            fill: #3979f6;
+          }
+        }
+      }
+      svg {
+        width: 20px;
+      }
+    }
+  }
+  &__icon {
+    margin-right: 0.5rem;
+    max-height: 32px;
+    max-width: 32px;
+    text-align: center;
+    &_active {
+      .sidebar__icon {
+        background-color: #c1c3cf;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        width: 32px;
+        height: 32px;
+      }
+      svg {
+        fill: #0d2b47;
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+  &__title {
+    margin: 25px 0 15px 20px;
+    font-size: 13px;
+    font-weight: 700;
+    color: rgba(165, 167, 184, 0.31);
+    transition: opacity 0.3s ease-in-out;
+  }
+  &__middle {
+    li {
+      .sidebar__dec {
+        position: relative;
+        padding: 13px 20px 13px 10px;
+        &:before {
+          content: '';
+          width: 4px;
+          height: 4px;
+          border-radius: 50%;
+          overflow: hidden;
+          display: block;
+          margin-right: 20px;
+          margin-left: 15px;
+        }
+      }
+
+      .sidebar__dec-green:before {
+        background: #2d8515;
+      }
+      .sidebar__dec-blue:before {
+        background: #2477ff;
+      }
+      .sidebar__dec-red:before {
+        background: #db2a34;
+      }
+    }
+  }
+}
+
+.bars-sidebar {
+  padding-left: 20px;
+  &__head {
+    @include flexbox();
+    color: #c1c3cf;
+    align-items: center;
+    margin-bottom: 2px;
+  }
+  &__title {
+    flex: 1 1 auto;
+  }
+  &__close {
+    button {
+      font-size: 16px;
+      color: #c1c3cf;
+      background: transparent;
+    }
+  }
+  &__text {
+    padding-top: 5px;
+    color: rgba(165, 167, 184, 0.31);
+    font-size: 13px;
+    margin-bottom: 7px;
+  }
+}
+
+//====================================================================================================
+
+.main {
+  min-height: 100vh;
+  @include flexbox();
+  flex-direction: column;
+  &__content {
+    padding: 5rem 60px 60px 240px;
+  }
+}
+.content-main {
+  &__breadcrumb {
+    @include flexbox();
+    margin-bottom: 15px;
+  }
+  &__breadcrumb-item {
+    @include flexbox();
+    font-size: 16px;
+    cursor: pointer;
+    color: rgba(244, 244, 245, 0.6);
+    &:not(:first-child) {
+      padding-left: 0.5rem;
+      &:before {
+        content: '>';
+        color: #798892;
+        display: inline-block;
+        padding-right: 0.5rem;
+      }
+    }
+  }
+  &__title {
+    margin: 25px 0 1.5rem;
+    color: rgba(244, 244, 245, 0.9);
+    font-weight: 300;
+    font-size: 40px;
+    small {
+      color: rgba(244, 244, 245, 0.7);
+    }
+  }
+
+  &__row {
+    @include flexbox();
+    margin: 0 -10px;
+  }
+  &__column {
+    flex: 0 1 40%;
+    padding: 0 10px;
+  }
+  &__big-column {
+    flex: 0 1 70%;
+  }
+  &__map {
+    width: 100%;
+    height: 100%;
+    img {
+      width: 100%;
+      min-height: 550px;
+      object-fit: contain;
+    }
+  }
+}
+.breadcrumb-items_active {
+  font-weight: 700;
+  color: rgba(244, 244, 245, 0.9);
+}
+//====================================================================================================
+
+.stats-main {
+  &__title-wrapper {
+    @include flexbox();
+    align-items: center;
+    font-size: 18px;
+    color: rgba(244, 244, 245, 0.9);
+    padding: 15px 20px 0 20px;
+    span {
+      font-weight: 700;
+    }
+    button {
+      background: transparent;
+    }
+    svg {
+      width: 15px;
+      fill: #f4f4f5;
+      height: 15px;
+    }
+  }
+  &__title {
+    flex: 1 1 auto;
+  }
+  &__controll {
+    ul {
+      @include flexbox();
+      align-items: center;
+      .stats-main__close {
+        font-size: 20px;
+        margin-bottom: 7px;
+        display: block;
+        color: #f4f4f5;
+      }
+      li {
+        padding: 1px 5px;
+      }
+    }
+  }
+  &__content-wrapper {
+    padding: 15px 20px;
+  }
+  &__status {
+    color: rgba(244, 244, 245, 0.6);
+    span {
+      font-weight: 700;
+    }
+  }
+  &__countries {
+    @include flexbox();
+    align-items: center;
+    padding: 1rem 0;
+    color: rgba(244, 244, 245, 0.6);
+    svg {
+      width: 20px;
+      height: 20px;
+      fill: #f4f4f5;
+      margin-right: 15px;
+    }
+  }
+  &__bar {
+    @include flexbox();
+  }
+  &__row {
+    @include flexbox();
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  &__column {
+    &:first-child {
+      flex: 1 1 auto;
+    }
+    p {
+      margin-bottom: 0.25rem;
+      font-size: 0.9rem;
+      font-weight: 300;
+      color: rgba(244, 244, 245, 0.9);
+    }
+  }
+  &__count {
+    display: block;
+    padding: 10px;
+    background: #333867;
+    opacity: 0.8;
+    padding: 8px 5px 8px 5px;
+    border-radius: 5px;
+  }
+  &__distributions {
+    color: rgba(244, 244, 245, 0.6);
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+  &__tracking {
+    margin-bottom: 1rem;
+    color: rgba(244, 244, 245, 0.6);
+    span {
+      font-weight: 600;
+    }
+  }
+  &__elements {
+    @include flexbox();
+    align-items: center;
+    svg {
+      width: 20px;
+      height: 20px;
+      fill: #f4f4f5;
+      margin-right: 15px;
+    }
+  }
+}
+
+.title-bar {
+  color: rgba(244, 244, 245, 0.6);
+  font-weight: 600;
+  margin-bottom: 7px;
+  padding-top: 6px;
+}
+//====================================================================================================
+
+.card-main {
+  &__row {
+    @include flexbox();
+    margin: 0 -15px;
+    flex-wrap: wrap;
+  }
+  &__column {
+    padding: 0 15px;
+    flex: 0 1 33.333%;
+    @include flexbox();
+    margin-bottom: 20px;
+  }
+  &__item {
+    background: rgba(0, 0, 0, 0.24);
+    padding: 20px;
+    box-shadow: 0 25px 20px -20px RGBA(0 0 0 / 10%), 0 0 15px RGBA(0 0 0 / 6%);
+    border-radius: 10px;
+    @include flexbox();
+    flex-direction: column;
+    width: 100%;
+  }
+  &__header {
+    @include flexbox();
+  }
+  &__title {
+    flex: 1 1 auto;
+    color: rgba(244, 244, 245, 0.9);
+  }
+  &__icons {
+    span {
+      button {
+        font-size: 16px;
+        color: #f4f4f5;
+        margin-left: 7px;
+      }
+    }
+    button {
+      background-color: transparent;
+    }
+    svg {
+      width: 10px;
+      height: 10px;
+      fill: #f4f4f5;
+    }
+  }
+  &__body {
+    @include flexbox();
+    margin: 0 -10px;
+    color: rgba(244, 244, 245, 0.6);
+    margin-bottom: 0.66rem;
+    flex: 1 1 auto;
+  }
+  &__info {
+    flex: 0 1 33.333%;
+    padding: 0 10px;
+  }
+  &__subtitle {
+    margin-bottom: 0.55rem;
+    font-size: 0.875rem;
+    margin-top: 10px;
+  }
+  &__footer {
+    margin-bottom: 1rem;
+  }
+  &__text {
+    color: rgba(244, 244, 245, 0.6);
+    @include flexbox();
+    padding-top: 20px;
+    align-items: center;
+    svg {
+      fill: rgba(244, 244, 245, 0.9);
+      width: 18px;
+      height: 18px;
+      background: #474d84;
+      padding: 4px;
+      border-radius: 50%;
+    }
+    span {
+      font-weight: 600;
+    }
+  }
+  &__bar {
+    margin-bottom: 5px;
+    padding-top: 5px;
+  }
+  &__badge {
+    background-color: #2d8515;
+    padding: 2px 6px 2px 6px;
+    border-radius: 5px;
+  }
+}
+//====================================================================================================
+
+.span-space {
+  padding: 0 5px;
+}
+
+.progress-bar {
+  width: 80%;
+  border-radius: 3px;
+  background: #474d84;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.progress-bar-fill {
+  display: block;
+  height: 4px;
+  background-color: #659cef;
+  border-radius: 3px;
+  transition: width 500ms ease-in-out;
+}
+.progress-bar-red {
+  background: #db2a34;
+}
+.progress-bar-green {
+  background: #2d8515;
+}
+.progress-bar__card {
+  width: 100%;
+}
+.progress-bar-blue {
+  background: #2477ff;
+}
+//====================================================================================================
+
+.messages-card {
+  width: 100%;
+  &__wrapper {
+    @include flexbox();
+    align-items: center;
+    padding: 15px 0 15px 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.125);
+    width: 100%;
+  }
+  &__avavtar {
+    margin-right: 15px;
+    width: 34px;
+    img {
+      height: auto;
+      max-width: 100%;
+      border-radius: 50%;
+    }
+  }
+  &__name {
+    margin-bottom: 5px;
+  }
+  &__text {
+    font-size: 0.9rem;
+  }
+}
+.card-main__unic {
+  margin: 0;
+}
+
+//</ОСНОВНОЙ БЛОК>====================================================================================================

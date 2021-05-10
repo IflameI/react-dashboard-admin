@@ -1,0 +1,70 @@
+.typography {
+  &__row {
+    @include flexbox();
+    margin: 0 -20px;
+  }
+  &__column {
+    flex: 0 1 50%;
+    padding: 0 20px;
+    margin-bottom: 40px;
+    @include flexbox();
+  }
+  &__item {
+    @include flexbox();
+    flex-direction: column;
+    padding: 15px;
+    border-radius: 10px;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.24);
+    box-shadow: 0 25px 20px -20px RGBA(0 0 0 / 10%), 0 0 15px RGBA(0 0 0 / 6%);
+    color: rgba(244, 244, 245, 0.6);
+  }
+  &__subitem {
+    margin-bottom: 40px;
+  }
+  &__subtitle {
+    margin-bottom: 10px;
+  }
+  &__text {
+    margin-bottom: 1rem;
+  }
+  &__info {
+    border: 1px solid #d6dee5;
+    padding: 15px;
+    border-radius: 0.3rem;
+    .display {
+      color: rgba(244, 244, 245, 0.6);
+      margin-bottom: 15px;
+    }
+    .decor-paragraph {
+      margin-bottom: 20.5px;
+    }
+    .p-weight {
+      margin-bottom: 20px;
+    }
+    .t-colors {
+      margin-bottom: 25px;
+    }
+    .blockquote__paragraph {
+      font-weight: 400;
+      line-height: 22px;
+      margin-bottom: 1rem;
+    }
+  }
+  &__subrow {
+    @include flexbox();
+    margin: 0 -10px;
+  }
+  &__subcolumn {
+    flex: 0 1 50%;
+    padding: 0 10px;
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      margin-bottom: 0.5rem;
+    }
+  }
+}
