@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowDown } from '.';
+import { ArrowDown } from '../components';
 
 const Typography = () => {
   return (

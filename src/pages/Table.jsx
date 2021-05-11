@@ -5,7 +5,7 @@ import {
   GraphicIconGreen,
   GraphicIconOrange,
   GraphicIconYellow,
-} from '.';
+} from '../components';
 
 const Table = () => {
   return (

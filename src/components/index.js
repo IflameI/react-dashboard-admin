@@ -1,11 +1,13 @@
 export { default as Header } from './Header';
 export { default as Sidebar } from './Sidebar';
-export { default as Typography } from './Typography';
+export { default as Typography } from './../pages/Typography';
 export { default as BreadCrumbs } from './BreadCrumbs';
-export { default as Table } from './Table';
+export { default as Table } from './../pages/Table';
 export { default as ContentMain } from './ContentMain';
-export { default as Notifications } from './Notifications';
+export { default as Notifications } from '../pages/Notifications';
 export { default as MainCards } from './MainCards';
+export { default as MapChart } from './MapChart';
+export { default as RefreshLoader } from '././helpers/RefreshLoader';
 export { default as CogWheelIcon } from './iconsComponents/CogWheelIcon';
 export { default as RefreshIcon } from './iconsComponents/RefreshIcon';
 export { default as MarkIcon } from './iconsComponents/MarkIcon';
