@@ -1,7 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ArrowDown } from '../components';
+import classNames from 'classnames';
 
 const Typography = () => {
+  const [closedBlock, setClosedBlock] = useState(false);
+  const [tunedBlock, setTunedBlock] = useState(false);
+  const toggleClosedBlock = () => {
+    setClosedBlock(!closedBlock);
+  };
+  const toggleTurnedBlock = () => {
+    setTunedBlock(!tunedBlock);
+  };
   return (
     <>
       <h1 className='content-main__title'>
@@ -9,7 +18,10 @@ const Typography = () => {
       </h1>
       <section className='typography'>
         <div className='typography__row'>
-          <div className='typography__column'>
+          <div
+            className={classNames('typography__column', {
+              closedBlock: closedBlock,
+            })}>
             <div className='typography__item'>
               <div className='typography__head header__global '>
                 <h5 className='typography__title'>
@@ -19,7 +31,7 @@ const Typography = () => {
                   <button>
                     <ArrowDown />
                   </button>
-                  <button>x</button>
+                  <button onClick={toggleClosedBlock}>x</button>
                 </div>
               </div>
               <div className='typography__content'>
@@ -77,7 +89,10 @@ const Typography = () => {
               </div>
             </div>
           </div>
-          <div className='typography__column'>
+          <div
+            className={classNames('typography__column', {
+              closedBlock: closedBlock,
+            })}>
             <div className='typography__item'>
               <div className='typography__head header__global'>
                 <h5 className='typography__title'>
@@ -87,7 +102,7 @@ const Typography = () => {
                   <button>
                     <ArrowDown />
                   </button>
-                  <button>x</button>
+                  <button onClick={toggleClosedBlock}>x</button>
                 </div>
               </div>
               <div className='typography__content'>

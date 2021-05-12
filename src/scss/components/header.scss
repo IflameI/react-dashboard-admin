@@ -120,6 +120,9 @@
       background-color: green;
     }
   }
+  &__sub-wrapper {
+    @include flexbox();
+  }
 }
 .btn-close {
   font-size: 18px;
@@ -137,7 +140,6 @@
     right: 0;
     z-index: 33;
     border-radius: 9px 9px 0 0;
-    display: none;
   }
   &__title {
     font-weight: 700;
@@ -244,7 +246,6 @@
 }
 
 .messages-dropmenu {
-  display: none;
   &__wrapper {
     position: absolute;
     top: 0;
@@ -291,7 +292,6 @@
 }
 
 .setings-header {
-  display: none;
   &__wrapper {
     position: absolute;
     top: 0;
@@ -340,7 +340,6 @@
 }
 
 .menu-tickets-header {
-  display: none;
   &__wrapper {
     position: absolute;
     top: 0;

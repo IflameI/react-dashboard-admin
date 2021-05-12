@@ -9,7 +9,7 @@ const global = (state = initialState, action) => {
     case 'SET_REFRESH':
       return {
         ...state,
-        isRefreshBlock: action.payload,
+        isRefreshedBlock: action.payload,
       };
     case 'SET_CLOSE':
       return {

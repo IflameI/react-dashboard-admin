@@ -1,12 +1,14 @@
 import React from 'react';
-import { ArrowDown, ArrowUp, CogWheelIcon, PlusIcon } from '.';
+import { ArrowDown, ArrowUp, CogWheelIcon, PlusIcon, useFuncBlock } from '.';
+import classNames from 'classnames';
 
 const MainCards = () => {
+  const { closedBlock, toggleClosedBlock } = useFuncBlock(false);
   return (
     <div className='content-main__card card-main'>
       <div className='card-main__row'>
         <div className='card-main__column'>
-          <div className='card-main__item'>
+          <div style={{ display: closedBlock ? 'none' : '' }} className='card-main__item'>
             <div className='card-main__header'>
               <div className='card-main__title'>USERBASE GROWTH </div>
               <div className='card-main__icons'>
@@ -14,7 +16,7 @@ const MainCards = () => {
                   <CogWheelIcon />
                 </button>
                 <span>
-                  <button>x</button>
+                  <button onClick={toggleClosedBlock}>x</button>
                 </span>
               </div>
             </div>
@@ -46,7 +48,7 @@ const MainCards = () => {
           </div>
         </div>
         <div className='card-main__column'>
-          <div className='card-main__item'>
+          <div className='card-main__item' style={{ display: closedBlock ? 'none' : '' }}>
             <div className='card-main__header'>
               <div className='card-main__title'>TRAFFIC VALUES</div>
               <div className='card-main__icons'>
@@ -54,7 +56,7 @@ const MainCards = () => {
                   <CogWheelIcon />
                 </button>
                 <span>
-                  <button>x</button>
+                  <button onClick={toggleClosedBlock}>x</button>
                 </span>
               </div>
             </div>
