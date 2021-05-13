@@ -1,49 +1,42 @@
-import React, { useState, useRef, useEffect } from 'react';
-import { RefreshLoader, useFuncBlock } from '.';
+import React, { useRef, useEffect } from 'react';
+import { RefreshLoader, useFuncBlock, useHeaderFunc } from '.';
+import Burger from './Burger/Burger';
 
-const Header = () => {
+const Header = ({ setSidebarChanged, setSidebarHiden, sidebarChanged, sidebarHiden }) => {
   const menuRef = useRef();
   const { refreshedBlock, closedBlock, toggleRefreshedBlock, toggleClosedBlock } =
     useFuncBlock(false);
-
-  const [visibleTickets, setVisibleTickets] = useState(false);
-  const [visibleMessages, setVisibleMessages] = useState(false);
-  const [visibleSettings, setVisibleSettings] = useState(false);
-  const [visibleInfo, setVisibleInfo] = useState(false);
-
-  const toggleVisibleTickets = () => {
-    setVisibleTickets(!visibleTickets);
-    setVisibleMessages(false);
-    setVisibleSettings(false);
-    setVisibleInfo(false);
+  const toggleSidebarChange = () => {
+    setSidebarChanged(true);
   };
-
-  const toggleVisibleMessages = () => {
-    setVisibleMessages(!visibleMessages);
-    setVisibleTickets(false);
-    setVisibleSettings(false);
-    setVisibleInfo(false);
+  const toggleDefaultSidebar = () => {
+    setSidebarChanged(false);
   };
-
-  const toggleVisibleSettings = () => {
-    setVisibleSettings(!visibleSettings);
-    setVisibleTickets(false);
-    setVisibleMessages(false);
-    setVisibleInfo(false);
+  const toggleSidebarHiden = () => {
+    setSidebarHiden(true);
   };
-
-  const toggleVisibleInfo = () => {
-    setVisibleInfo(!visibleInfo);
-    setVisibleTickets(false);
-    setVisibleMessages(false);
-    setVisibleSettings(false);
+  const toggleDefaultHidenSidebar = () => {
+    setSidebarHiden(false);
   };
+  const {
+    visibleInfo,
+    visibleSettings,
+    visibleMessages,
+    visibleTickets,
+    toggleVisibleTickets,
+    toggleVisibleMessages,
+    toggleVisibleSettings,
+    toggleVisibleInfo,
+    setVisibleTickets,
+    setVisibleMessages,
+    setVisibleInfo,
+  } = useHeaderFunc(false);
+
   const handleOutsideClick = (event) => {
     const path = event.path || (event.composedPath && event.composedPath());
     if (!path.includes(menuRef.current)) {
       setVisibleMessages(false);
       setVisibleTickets(false);
-
       setVisibleInfo(false);
     }
   };
@@ -54,6 +47,7 @@ const Header = () => {
   return (
     <header className='header'>
       <div className='header__row'>
+        <Burger />
         <div className='header__alert'>
           <div className='header__alert-content' style={{ display: closedBlock ? 'none' : '' }}>
             Check out Light Blue
@@ -79,8 +73,8 @@ const Header = () => {
                 <img src='https://thispersondoesnotexist.com/image' alt='#'></img>
               </div>
               <div className='header__name'>Philip Smith</div>
-              <span className='header__drop-notifications'>9</span>
               <svg
+                className={visibleInfo ? 'rotated' : ''}
                 xmlns='http://www.w3.org/2000/svg'
                 width='100%'
                 height='100%'
@@ -92,17 +86,6 @@ const Header = () => {
               <div className='header__notifications notifications-header'>
                 <div className='notifications-header__wrapper'>
                   <div className='notifications-header__title'>You have 13 notifications</div>
-                  <div className='notifications-header__filter'>
-                    <div className='notifications-header__category'>
-                      <button className='notifications-header__decor notifications-header__decor_active'>
-                        Notifications
-                      </button>
-                      <button className='notifications-header__decor notifications-header__decor_unic'>
-                        Messages
-                      </button>
-                      <button className='notifications-header__decor'>Progress</button>
-                    </div>
-                  </div>
                   {refreshedBlock ? (
                     <RefreshLoader />
                   ) : (
@@ -267,19 +250,47 @@ const Header = () => {
                   <div className='setings-header__item'>
                     <div className='setings-header__title'>Sidebar on the</div>
                     <div className='setings-header__buttons'>
-                      <button className='setings-header__btn-left setings-header__active'>
+                      <button
+                        onClick={toggleDefaultSidebar}
+                        className={
+                          !sidebarChanged
+                            ? 'setings-header__btn-left setings-header__active '
+                            : 'setings-header__btn-left'
+                        }>
                         Left
                       </button>
-                      <button className='setings-header__btn-right'>Right</button>
+                      <button
+                        onClick={toggleSidebarChange}
+                        className={
+                          sidebarChanged
+                            ? 'setings-header__btn-right setings-header__active'
+                            : 'setings-header__btn-right'
+                        }>
+                        Right
+                      </button>
                     </div>
                   </div>
                   <div className='setings-header__item'>
-                    <div className='setings-header__title'>Sidebar on the</div>
+                    <div className='setings-header__title'>Sidebar</div>
                     <div className='setings-header__buttons'>
-                      <button className='setings-header__btn-left setings-header__active'>
-                        Left
+                      <button
+                        onClick={toggleDefaultHidenSidebar}
+                        className={
+                          !sidebarHiden
+                            ? 'setings-header__btn-left setings-header__active'
+                            : 'setings-header__btn-left'
+                        }>
+                        Show
                       </button>
-                      <button className='setings-header__btn-right'>Right</button>
+                      <button
+                        onClick={toggleSidebarHiden}
+                        className={
+                          sidebarHiden
+                            ? 'setings-header__btn-right setings-header__active'
+                            : 'setings-header__btn-right'
+                        }>
+                        Hide
+                      </button>
                     </div>
                   </div>
                 </div>

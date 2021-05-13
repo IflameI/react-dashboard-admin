@@ -13,14 +13,10 @@ import classNames from 'classnames';
 
 const ContentMain = () => {
   const [mapContent, setMapContent] = useState('');
-  const [tunedBlock, setTunedBlock] = useState(false);
 
   const { refreshedBlock, closedBlock, toggleRefreshedBlock, toggleClosedBlock } =
     useFuncBlock(false);
 
-  const toggleTurnedBlock = () => {
-    setTunedBlock(!tunedBlock);
-  };
   return (
     <>
       <h1 className='content-main__title'>

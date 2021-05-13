@@ -7,17 +7,15 @@
     flex: 0 1 50%;
     padding: 0 20px;
     margin-bottom: 40px;
-    @include flexbox();
   }
   &__item {
-    @include flexbox();
-    flex-direction: column;
     padding: 15px;
     border-radius: 10px;
     width: 100%;
     background: rgba(0, 0, 0, 0.24);
     box-shadow: 0 25px 20px -20px RGBA(0 0 0 / 10%), 0 0 15px RGBA(0 0 0 / 6%);
     color: rgba(244, 244, 245, 0.6);
+    @include anim(0.3s, 0s);
   }
   &__subitem {
     margin-bottom: 40px;
@@ -66,5 +64,8 @@
     h6 {
       margin-bottom: 0.5rem;
     }
+  }
+  &__content {
+    @include anim(0.3s, 0s);
   }
 }

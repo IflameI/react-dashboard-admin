@@ -91,7 +91,9 @@ body {
   width: 200px;
   min-height: 100vh;
   margin-left: 15px;
-
+  @media (max-width: 991.98px) {
+    display: none;
+  }
   &__logo {
     font-size: 18px;
     width: 100%;
@@ -171,6 +173,7 @@ body {
     li {
       .sidebar__dec {
         position: relative;
+        @include flexbox();
         padding: 13px 20px 13px 10px;
         &:before {
           content: '';
@@ -231,6 +234,12 @@ body {
   flex-direction: column;
   &__content {
     padding: 5rem 60px 60px 240px;
+    @media (max-width: 991.98px) {
+      padding: 5rem 40px 40px 40px;
+    }
+    @media (max-width: 550px) {
+      padding: 5rem 10px 0px 10px;
+    }
   }
 }
 .content-main {
@@ -266,13 +275,25 @@ body {
   &__row {
     @include flexbox();
     margin: 0 -10px;
+    @media (max-width: 991.98px) {
+      flex-wrap: wrap;
+    }
   }
   &__column {
     flex: 0 1 40%;
     padding: 0 10px;
+    @media (max-width: 991.98px) {
+      flex: 0 1 100%;
+    }
+    @media (max-width: 550px) {
+      margin-bottom: 10px;
+    }
   }
   &__big-column {
     flex: 0 1 70%;
+    @media (max-width: 991.98px) {
+      flex: 0 1 100%;
+    }
   }
   &__map {
     width: 100%;
@@ -280,6 +301,10 @@ body {
     text-align: center;
     svg {
       height: 590px;
+      max-width: 100%;
+      @media (max-width: 550px) {
+        display: none;
+      }
     }
     img {
       width: 100%;
@@ -301,6 +326,9 @@ body {
     font-size: 18px;
     color: rgba(244, 244, 245, 0.9);
     padding: 15px 20px 0 20px;
+    @media (max-width: 550px) {
+      padding: 15px 0px 0 0px;
+    }
     span {
       font-weight: 700;
     }
@@ -315,6 +343,9 @@ body {
   }
   &__title {
     flex: 1 1 auto;
+    @media (max-width: 1200px) {
+      font-size: 1rem;
+    }
   }
   &__controll {
     ul {
@@ -333,6 +364,9 @@ body {
   }
   &__content-wrapper {
     padding: 15px 20px;
+    @media (max-width: 550px) {
+      padding: 0px;
+    }
   }
   &__status {
     color: rgba(244, 244, 245, 0.6);
@@ -423,6 +457,12 @@ body {
     flex: 0 1 33.333%;
     @include flexbox();
     margin-bottom: 20px;
+    @media (max-width: 1200px) {
+      flex: 0 1 50%;
+    }
+    @media (max-width: 991.98px) {
+      flex: 0 1 100%;
+    }
   }
   &__item {
     background: rgba(0, 0, 0, 0.24);
@@ -435,6 +475,7 @@ body {
   }
   &__header {
     @include flexbox();
+    align-items: center;
   }
   &__title {
     flex: 1 1 auto;
@@ -609,4 +650,105 @@ body {
 .closedBlock {
   display: none;
 }
+
+.main.sidebarChanged {
+  .sidebar {
+    left: unset;
+    right: 0;
+  }
+  .main__content {
+    padding: 5rem 240px 60px 60px;
+  }
+  .header {
+    right: unset;
+    left: 0;
+  }
+}
+
+.main.sidebarHiden {
+  .sidebar {
+    display: none;
+  }
+  .main__content {
+    padding: 5rem 60px 60px 60px;
+  }
+  .header {
+    right: unset;
+    left: 0;
+  }
+}
+
+@media (max-width: $md2+px) {
+  .sidebar__top {
+    flex-direction: column;
+    flex-wrap: wrap;
+    background: radial-gradient(farthest-side ellipse at 10% 0, #3d469c 20%, #17193b);
+    position: fixed;
+    transform: translateX(100%);
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 50%;
+    padding-top: 3.5rem;
+    transition: transform 0.3s ease-in-out;
+    & li {
+      margin-bottom: 20px;
+      font-size: 24px;
+      text-align: center;
+      margin-right: 0;
+    }
+  }
+}
+
+.styledBurger {
+  width: 2rem;
+  height: 2rem;
+  position: absolute;
+  top: 15px;
+  left: 10px;
+  z-index: 20;
+  display: none;
+  @media (max-width: $md2+px) {
+    display: flex;
+    justify-content: space-around;
+    flex-flow: column nowrap;
+  }
+  .elementBurger {
+    width: 2rem;
+    height: 0.25rem;
+    background-color: #3d469c;
+    border-radius: 10px;
+    transform-origin: 1px;
+    transition: all 0.3s linear;
+    &:nth-child(1) {
+      transform: rotate(0);
+    }
+    &:nth-child(2) {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    &:nth-child(3) {
+      transform: rotate(0);
+    }
+  }
+}
+.sidebar__top.open {
+  transform: translateX(0%);
+}
+.styledBurger.open {
+  .elementBurger:nth-child(1) {
+    transform: rotate(45deg);
+  }
+  .elementBurger:nth-child(2) {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  .elementBurger:nth-child(3) {
+    transform: rotate(-45deg);
+  }
+  .elementBurger {
+    background-color: #3668ff;
+  }
+}
+
 //</ОСНОВНОЙ БЛОК>====================================================================================================

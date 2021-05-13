@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 const useFuncBlock = (initial) => {
   const [refreshedBlock, setRefreshedBlock] = useState(initial);
   const [closedBlock, setClosedBlock] = useState(initial);
+  const [turnedBlock, setTurnedBlock] = useState(initial);
 
   const toggleRefreshedBlock = () => {
     setRefreshedBlock(!refreshedBlock);
@@ -16,7 +17,18 @@ const useFuncBlock = (initial) => {
     setClosedBlock(!closedBlock);
   };
 
-  return { refreshedBlock, closedBlock, toggleRefreshedBlock, toggleClosedBlock };
+  const toggleTurnedBlock = () => {
+    setTurnedBlock(!turnedBlock);
+  };
+
+  return {
+    refreshedBlock,
+    closedBlock,
+    turnedBlock,
+    toggleRefreshedBlock,
+    toggleClosedBlock,
+    toggleTurnedBlock,
+  };
 };
 
 export default useFuncBlock;

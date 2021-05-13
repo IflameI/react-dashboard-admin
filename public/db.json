@@ -1,0 +1,25 @@
+{
+    "pizzas": [
+      {
+        "id": 0,
+        "nameCard": "Overall Growth",
+        "overallPercent": 76.38,
+        "montlyPercent": 10,
+        "dayPercent": 3
+      },
+      {
+        "id": 1,
+        "nameCard": "TRAFFIC VALUES",
+        "overallPercent": 66,
+        "montlyPercent": 7,
+        "dayPercent": 4
+      },
+      {
+        "id": 2,
+        "nameCard": "RANDOM VALUES",
+        "overallPercent": 99,
+        "montlyPercent": 51,
+        "dayPercent": 14
+      }
+    ]
+  }

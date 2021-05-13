@@ -8,6 +8,12 @@
   width: calc(100% - 200px);
   font-weight: 500;
   padding: 0.9rem 40px;
+  @media (max-width: 991.98px) {
+    right: unset;
+    left: 0;
+    width: 100%;
+    padding: 0.9rem 20px;
+  }
   &__row {
     @include flexbox();
     width: 100%;
@@ -26,6 +32,9 @@
     font-size: 1rem;
     color: hsla(0, 0%, 100%, 0.6);
     border-radius: 10px;
+    @media (max-width: 991.98px) {
+      display: none;
+    }
     button {
       background: none;
       color: #3979f6;
@@ -64,6 +73,9 @@
     font-size: 18px;
     margin-right: 10px;
     border-radius: 50%;
+    @media (max-width: 550px) {
+      display: none;
+    }
     img {
       object-fit: cover;
       width: 100%;
@@ -72,6 +84,7 @@
   &__name {
     @include flexbox();
     align-items: center;
+    margin-right: 5px;
   }
   &__drop-notifications {
     @include flexbox();
@@ -99,9 +112,15 @@
       fill: #c1c3cf;
       width: 20px;
       height: 20px;
+      @media (max-width: 550px) {
+        width: 15px;
+      }
     }
     div {
       padding: 0.5rem 12px;
+      @media (max-width: 550px) {
+        padding: 0.5rem 8px;
+      }
     }
   }
   &__messages {
@@ -123,6 +142,13 @@
   &__sub-wrapper {
     @include flexbox();
   }
+  .sidebar__top {
+    display: none;
+    @media (max-width: 991.98px) {
+      display: block;
+      z-index: 3;
+    }
+  }
 }
 .btn-close {
   font-size: 18px;
@@ -140,6 +166,10 @@
     right: 0;
     z-index: 33;
     border-radius: 9px 9px 0 0;
+    @media (max-width: 550px) {
+      left: -45px;
+      width: 273px;
+    }
   }
   &__title {
     font-weight: 700;
@@ -266,6 +296,9 @@
     .messages-card__wrapper {
       padding: 15px 10px 15px 10px;
     }
+    @media (max-width: 550px) {
+      width: 200px;
+    }
   }
   &__item {
     @media (min-width: $md2+px) {
@@ -376,4 +409,8 @@
       color: rgba(244, 244, 245, 0.9);
     }
   }
+}
+.rotated {
+  transform: rotate(180deg);
+  @include anim(0.3s, 0s);
 }

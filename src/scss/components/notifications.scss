@@ -27,6 +27,12 @@
         background-color: #474d84;
         cursor: pointer;
         position: absolute;
+        @media (min-width: $md2+px) {
+          &:hover {
+            @include anim(0.3s, 0s);
+            background-color: rgba(71, 77, 132, 0.8);
+          }
+        }
       }
     }
   }

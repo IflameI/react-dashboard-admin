@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import React from 'react';
 import { ComposableMap, Geographies, Geography, ZoomableGroup, Marker } from 'react-simple-maps';
 
 const geoUrl = 'https://cdn.jsdelivr.net/npm/us-atlas@3/states-10m.json';
@@ -71,4 +71,4 @@ const MapChart = ({ setTooltipContent }) => {
   );
 };
 
-export default memo(MapChart);
+export default MapChart;
