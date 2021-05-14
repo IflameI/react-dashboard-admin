@@ -2,11 +2,17 @@
   &__row {
     @include flexbox();
     margin: 0 -20px;
+    @media (max-width: 1200px) {
+      flex-wrap: wrap;
+    }
   }
   &__column {
     flex: 0 1 50%;
     padding: 0 20px;
     margin-bottom: 40px;
+    @media (max-width: 1200px) {
+      flex: 0 1 100%;
+    }
   }
   &__item {
     padding: 15px;
@@ -20,6 +26,13 @@
   &__subitem {
     margin-bottom: 40px;
   }
+  &__head {
+    @media (max-width: 400px) {
+      h5 {
+        font-size: 1rem;
+      }
+    }
+  }
   &__subtitle {
     margin-bottom: 10px;
   }
@@ -30,6 +43,11 @@
     border: 1px solid #d6dee5;
     padding: 15px;
     border-radius: 0.3rem;
+    @media (max-width: 991.98px) {
+      h1 {
+        font-size: 2rem;
+      }
+    }
     .display {
       color: rgba(244, 244, 245, 0.6);
       margin-bottom: 15px;
@@ -52,10 +70,16 @@
   &__subrow {
     @include flexbox();
     margin: 0 -10px;
+    @media (max-width: 991.98px) {
+      flex-wrap: wrap;
+    }
   }
   &__subcolumn {
     flex: 0 1 50%;
     padding: 0 10px;
+    @media (max-width: 991.98px) {
+      flex: 0 1 100%;
+    }
     h1,
     h2,
     h3,

@@ -2,11 +2,17 @@
   &__row {
     @include flexbox();
     margin: 0 -10px;
+    @media (max-width: 1200px) {
+      flex-wrap: wrap;
+    }
   }
   &__column {
     flex: 0 1 33.333%;
     padding: 0 10px;
     color: rgba(244, 244, 245, 0.6);
+    @media (max-width: 1200px) {
+      flex: 0 1 100%;
+    }
   }
   &__subtitle {
     padding-top: 10px;

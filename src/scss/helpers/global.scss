@@ -235,6 +235,7 @@ div.abc-checkbox label:after {
 .badge-success,
 .badge-warning {
   color: #f4f4f5;
+  margin: 0 5px;
 }
 
 .badge-danger {
@@ -358,4 +359,17 @@ pre code {
   background-color: #2d8515;
   border-color: #2d8515;
   box-shadow: inset 0 1px 0 RGBA(244 244 245 / 15%), 0 1px 1px RGBA(0 0 0 / 8%);
+}
+
+@media (max-width: 767px) {
+  table,
+  tbody,
+  th,
+  td,
+  tr {
+    display: block;
+  }
+  thead {
+    display: none;
+  }
 }

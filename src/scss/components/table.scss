@@ -51,10 +51,16 @@
   &__row {
     @include flexbox();
     margin: 0 -15px;
+    @media (max-width: 1200px) {
+      flex-wrap: wrap;
+    }
   }
   &__column {
     padding: 0 15px;
     flex: 0 1 50%;
+    @media (max-width: 1200px) {
+      flex: 0 1 100%;
+    }
   }
   &__item {
     margin-bottom: 25px;

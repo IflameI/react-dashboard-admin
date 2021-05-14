@@ -270,6 +270,9 @@ body {
     small {
       color: rgba(244, 244, 245, 0.7);
     }
+    @media (max-width: 500px) {
+      font-size: 26px;
+    }
   }
 
   &__row {
@@ -684,11 +687,15 @@ body {
     flex-wrap: wrap;
     background: radial-gradient(farthest-side ellipse at 10% 0, #3d469c 20%, #17193b);
     position: fixed;
-    transform: translateX(100%);
+    transform: translateY(100%);
     top: 0;
     right: 0;
+    left: 0;
     height: 100vh;
     width: 50%;
+    @media (max-width: 500px) {
+      width: 100%;
+    }
     padding-top: 3.5rem;
     transition: transform 0.3s ease-in-out;
     & li {
@@ -716,7 +723,7 @@ body {
   .elementBurger {
     width: 2rem;
     height: 0.25rem;
-    background-color: #3d469c;
+    background-color: #c1c3cf;
     border-radius: 10px;
     transform-origin: 1px;
     transition: all 0.3s linear;
@@ -733,9 +740,10 @@ body {
   }
 }
 .sidebar__top.open {
-  transform: translateX(0%);
+  transform: translateY(0%);
 }
 .styledBurger.open {
+  position: fixed;
   .elementBurger:nth-child(1) {
     transform: rotate(45deg);
   }
