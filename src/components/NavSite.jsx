@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import classNames from 'classnames';
+import PropTypes from 'prop-types';
 
 const NavSite = ({ open }) => {
   return (
@@ -71,6 +72,9 @@ const NavSite = ({ open }) => {
       </li>
     </ul>
   );
+};
+NavSite.propTypes = {
+  open: PropTypes.bool,
 };
 
 export default NavSite;

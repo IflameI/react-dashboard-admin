@@ -2,7 +2,7 @@ export { default as Table } from './../pages/Table';
 export { default as Typography } from './../pages/Typography';
 export { default as Notifications } from '../pages/Notifications';
 
-export { default as Header } from './Header';
+export { default as Header } from './Header/Header';
 export { default as Sidebar } from './Sidebar';
 export { default as BreadCrumbs } from './BreadCrumbs';
 export { default as ContentMain } from './ContentMain';
@@ -11,6 +11,11 @@ export { default as MapChart } from './MapChart';
 export { default as StatsMainBlock } from './StatsMainBlock';
 export { default as MainCardsItem } from './MainCardsItem';
 export { default as NavSite } from './NavSite';
+export { default as Login } from './Login/Login';
+
+export { default as NotificationsHeaderItem } from './Header/NotificationsHeaderItem';
+export { default as MessagesHeaderItem } from './Header/MessagesHeaderItem';
+export { default as TicketsHeaderItem } from './Header/TicketsHeaderItem';
 
 export { default as BigTable } from './Tables/BigTable';
 export { default as WidgetLeftTable } from './Tables/WidgetLeftTable';
@@ -22,6 +27,7 @@ export { default as TypographyColumnRight } from './Typography/TypographyColumnR
 export { default as RefreshLoader } from '././helpers/RefreshLoader';
 export { default as useFuncBlock } from './helpers/hooks/useFuncBlock';
 export { default as useHeaderFunc } from './helpers/hooks/useHeaderFunc';
+export { default as useToken } from './helpers/hooks/useToken';
 
 export { default as CogWheelIcon } from './iconsComponents/CogWheelIcon';
 export { default as RefreshIcon } from './iconsComponents/RefreshIcon';

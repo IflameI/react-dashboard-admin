@@ -3,12 +3,12 @@ import { BigTable, WidgetLeftTable, WidgetRightTable } from '../components';
 
 const Table = () => {
   return (
-    <section class='table'>
-      <div class='table__row'>
+    <section className='table'>
+      <div className='table__row'>
         <BigTable />
       </div>
-      <div class='table__widgets widgets-table'>
-        <div class='widgets-table__row'>
+      <div className='table__widgets widgets-table'>
+        <div className='widgets-table__row'>
           <WidgetLeftTable />
           <WidgetRightTable />
         </div>

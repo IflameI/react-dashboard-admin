@@ -1,20 +1,40 @@
 import React, { useRef, useEffect } from 'react';
-import { RefreshLoader, useFuncBlock, useHeaderFunc } from '.';
-import Burger from './Burger/Burger';
+import PropTypes from 'prop-types';
 
-const Header = ({ setSidebarChanged, setSidebarHiden, sidebarChanged, sidebarHiden }) => {
+import {
+  MessagesHeaderItem,
+  NotificationsHeaderItem,
+  RefreshLoader,
+  TicketsHeaderItem,
+  useFuncBlock,
+  useHeaderFunc,
+} from '..';
+import Burger from '../Burger/Burger';
+
+const Header = ({
+  setSidebarChanged,
+  setSidebarHiden,
+  sidebarChanged,
+  sidebarHiden,
+  clearToken,
+}) => {
   const menuRef = useRef();
+
   const { refreshedBlock, closedBlock, toggleRefreshedBlock, toggleClosedBlock } =
     useFuncBlock(false);
+
   const toggleSidebarChange = () => {
     setSidebarChanged(true);
   };
+
   const toggleDefaultSidebar = () => {
     setSidebarChanged(false);
   };
+
   const toggleSidebarHiden = () => {
     setSidebarHiden(true);
   };
+
   const toggleDefaultHidenSidebar = () => {
     setSidebarHiden(false);
   };
@@ -85,89 +105,18 @@ const Header = ({ setSidebarChanged, setSidebarHiden, sidebarChanged, sidebarHid
             {visibleInfo && (
               <div className='header__notifications notifications-header'>
                 <div className='notifications-header__wrapper'>
-                  <div className='notifications-header__title'>You have 13 notifications</div>
+                  <div className='notifications-header__title'>You have new notifications</div>
                   {refreshedBlock ? (
                     <RefreshLoader />
                   ) : (
                     <div className='notifications-header__content'>
-                      <div className='notifications-header__item'>
-                        <div className='notifications-header__image'>
-                          <img
-                            src='https://images.generated.photos/FAjRh6JH3iDAo-OPDzwHrhMl7tGvLILwVIPu9il6fng/rs:fit:512:512/wm:0.95:sowe:18:18:0.33/Z3M6Ly9nZW5lcmF0/ZWQtcGhvdG9zLWNv/bmRpdGlvbmFsLzRk/NDA3OGJjLWM1OGQt/NGM1OC1iZDU3LWVl/NTI1YmY2NTIwZi5q/cGc.jpg'
-                            alt=''></img>
-                        </div>
-                        <div className='notifications-header__info'>
-                          <div className='notifications-header__text'>
-                            1 new user just signed up! Check out Monica Smith's account
-                          </div>
-                          <div className='notifications-header__time'>2 mins ago</div>
-                        </div>
-                      </div>
-                      <div className='notifications-header__item'>
-                        <div className='notifications-header__image'>
-                          <img
-                            src='https://images.generated.photos/FAjRh6JH3iDAo-OPDzwHrhMl7tGvLILwVIPu9il6fng/rs:fit:512:512/wm:0.95:sowe:18:18:0.33/Z3M6Ly9nZW5lcmF0/ZWQtcGhvdG9zLWNv/bmRpdGlvbmFsLzRk/NDA3OGJjLWM1OGQt/NGM1OC1iZDU3LWVl/NTI1YmY2NTIwZi5q/cGc.jpg'
-                            alt=''></img>
-                        </div>
-                        <div className='notifications-header__info'>
-                          <div className='notifications-header__text'>
-                            1 new user just signed up! Check out Monica Smith's account
-                          </div>
-                          <div className='notifications-header__time'>2 mins ago</div>
-                        </div>
-                      </div>
-                      <div className='notifications-header__item'>
-                        <div className='notifications-header__image'>
-                          <img
-                            src='https://images.generated.photos/FAjRh6JH3iDAo-OPDzwHrhMl7tGvLILwVIPu9il6fng/rs:fit:512:512/wm:0.95:sowe:18:18:0.33/Z3M6Ly9nZW5lcmF0/ZWQtcGhvdG9zLWNv/bmRpdGlvbmFsLzRk/NDA3OGJjLWM1OGQt/NGM1OC1iZDU3LWVl/NTI1YmY2NTIwZi5q/cGc.jpg'
-                            alt=''></img>
-                        </div>
-                        <div className='notifications-header__info'>
-                          <div className='notifications-header__text'>
-                            1 new user just signed up! Check out Monica Smith's account
-                          </div>
-                          <div className='notifications-header__time'>2 mins ago</div>
-                        </div>
-                      </div>
-                      <div className='notifications-header__item'>
-                        <div className='notifications-header__image'>
-                          <img
-                            src='https://images.generated.photos/FAjRh6JH3iDAo-OPDzwHrhMl7tGvLILwVIPu9il6fng/rs:fit:512:512/wm:0.95:sowe:18:18:0.33/Z3M6Ly9nZW5lcmF0/ZWQtcGhvdG9zLWNv/bmRpdGlvbmFsLzRk/NDA3OGJjLWM1OGQt/NGM1OC1iZDU3LWVl/NTI1YmY2NTIwZi5q/cGc.jpg'
-                            alt=''></img>
-                        </div>
-                        <div className='notifications-header__info'>
-                          <div className='notifications-header__text'>
-                            1 new user just signed up! Check out Monica Smith's account
-                          </div>
-                          <div className='notifications-header__time'>2 mins ago</div>
-                        </div>
-                      </div>
-                      <div className='notifications-header__item'>
-                        <div className='notifications-header__image'>
-                          <img
-                            src='https://images.generated.photos/FAjRh6JH3iDAo-OPDzwHrhMl7tGvLILwVIPu9il6fng/rs:fit:512:512/wm:0.95:sowe:18:18:0.33/Z3M6Ly9nZW5lcmF0/ZWQtcGhvdG9zLWNv/bmRpdGlvbmFsLzRk/NDA3OGJjLWM1OGQt/NGM1OC1iZDU3LWVl/NTI1YmY2NTIwZi5q/cGc.jpg'
-                            alt=''></img>
-                        </div>
-                        <div className='notifications-header__info'>
-                          <div className='notifications-header__text'>
-                            1 new user just signed up! Check out Monica Smith's account
-                          </div>
-                          <div className='notifications-header__time'>2 mins ago</div>
-                        </div>
-                      </div>
-                      <div className='notifications-header__item'>
-                        <div className='notifications-header__image'>
-                          <img
-                            src='https://images.generated.photos/FAjRh6JH3iDAo-OPDzwHrhMl7tGvLILwVIPu9il6fng/rs:fit:512:512/wm:0.95:sowe:18:18:0.33/Z3M6Ly9nZW5lcmF0/ZWQtcGhvdG9zLWNv/bmRpdGlvbmFsLzRk/NDA3OGJjLWM1OGQt/NGM1OC1iZDU3LWVl/NTI1YmY2NTIwZi5q/cGc.jpg'
-                            alt=''></img>
-                        </div>
-                        <div className='notifications-header__info'>
-                          <div className='notifications-header__text'>
-                            1 new user just signed up! Check out Monica Smith's account
-                          </div>
-                          <div className='notifications-header__time'>2 mins ago</div>
-                        </div>
-                      </div>
+                      <NotificationsHeaderItem />
+                      <NotificationsHeaderItem />
+                      <NotificationsHeaderItem />
+                      <NotificationsHeaderItem />
+                      <NotificationsHeaderItem />
+                      <NotificationsHeaderItem />
+                      <NotificationsHeaderItem />
                     </div>
                   )}
 
@@ -193,51 +142,9 @@ const Header = ({ setSidebarChanged, setSidebarHiden, sidebarChanged, sidebarHid
             {visibleMessages && (
               <div className='header__dropmenu-messages messages-dropmenu'>
                 <div className='messages-dropmenu__wrapper'>
-                  <div className='messages-dropmenu__item'>
-                    <div className='messages-card__wrapper'>
-                      <div className='messages-card__avavtar'>
-                        <img
-                          src='https://images.generated.photos/FAjRh6JH3iDAo-OPDzwHrhMl7tGvLILwVIPu9il6fng/rs:fit:512:512/wm:0.95:sowe:18:18:0.33/Z3M6Ly9nZW5lcmF0/ZWQtcGhvdG9zLWNv/bmRpdGlvbmFsLzRk/NDA3OGJjLWM1OGQt/NGM1OC1iZDU3LWVl/NTI1YmY2NTIwZi5q/cGc.jpg'
-                          alt='#'></img>
-                      </div>
-                      <div className='messages-card__info'>
-                        <div className='messages-card__name'>Chris Gray</div>
-                        <div className='messages-card__text'>
-                          Hey! What's up? So many times since we
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className='messages-dropmenu__item'>
-                    <div className='messages-card__wrapper'>
-                      <div className='messages-card__avavtar'>
-                        <img
-                          src='https://images.generated.photos/FAjRh6JH3iDAo-OPDzwHrhMl7tGvLILwVIPu9il6fng/rs:fit:512:512/wm:0.95:sowe:18:18:0.33/Z3M6Ly9nZW5lcmF0/ZWQtcGhvdG9zLWNv/bmRpdGlvbmFsLzRk/NDA3OGJjLWM1OGQt/NGM1OC1iZDU3LWVl/NTI1YmY2NTIwZi5q/cGc.jpg'
-                          alt='#'></img>
-                      </div>
-                      <div className='messages-card__info'>
-                        <div className='messages-card__name'>Chris Gray</div>
-                        <div className='messages-card__text'>
-                          Hey! What's up? So many times since we
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className='messages-dropmenu__item'>
-                    <div className='messages-card__wrapper'>
-                      <div className='messages-card__avavtar'>
-                        <img
-                          src='https://images.generated.photos/FAjRh6JH3iDAo-OPDzwHrhMl7tGvLILwVIPu9il6fng/rs:fit:512:512/wm:0.95:sowe:18:18:0.33/Z3M6Ly9nZW5lcmF0/ZWQtcGhvdG9zLWNv/bmRpdGlvbmFsLzRk/NDA3OGJjLWM1OGQt/NGM1OC1iZDU3LWVl/NTI1YmY2NTIwZi5q/cGc.jpg'
-                          alt='#'></img>
-                      </div>
-                      <div className='messages-card__info'>
-                        <div className='messages-card__name'>Chris Gray</div>
-                        <div className='messages-card__text'>
-                          Hey! What's up? So many times since we
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                  <MessagesHeaderItem />
+                  <MessagesHeaderItem />
+                  <MessagesHeaderItem />
                   <div className='messages-dropmenu__button'>
                     <button>See all messages</button>
                   </div>
@@ -299,21 +206,12 @@ const Header = ({ setSidebarChanged, setSidebarHiden, sidebarChanged, sidebarHid
             {visibleTickets && (
               <div className='header__tickets-menu menu-tickets-header'>
                 <div className='menu-tickets-header__wrapper'>
-                  <div className='menu-tickets-header__item'>
-                    <div className='menu-tickets-header__text'>Check out this awesome ticket</div>
-                  </div>
-                  <div className='menu-tickets-header__item'>
-                    <div className='menu-tickets-header__text'>Check out this awesome ticket</div>
-                  </div>
-                  <div className='menu-tickets-header__item'>
-                    <div className='menu-tickets-header__text'>Check out this awesome ticket</div>
-                  </div>
-                  <div className='menu-tickets-header__item'>
-                    <div className='menu-tickets-header__text'>Check out this awesome ticket</div>
-                  </div>
-                  <div className='menu-tickets-header__item'>
-                    <div className='menu-tickets-header__text'>Check out this awesome ticket</div>
-                  </div>
+                  <TicketsHeaderItem />
+                  <TicketsHeaderItem />
+                  <TicketsHeaderItem />
+                  <TicketsHeaderItem />
+                  <TicketsHeaderItem />
+                  <TicketsHeaderItem />
                   <div className='menu-tickets-header__button'>
                     <button>See all tickets</button>
                   </div>
@@ -349,7 +247,7 @@ const Header = ({ setSidebarChanged, setSidebarHiden, sidebarChanged, sidebarHid
                 <path d='M15 21c0 1.598-1.392 3-2.971 3s-3.029-1.402-3.029-3h6zm.137-17.055c-.644-.374-1.042-1.07-1.041-1.82v-.003c.001-1.172-.938-2.122-2.096-2.122s-2.097.95-2.097 2.122v.003c.001.751-.396 1.446-1.041 1.82-4.668 2.709-1.985 11.715-6.862 13.306v1.749h20v-1.749c-4.877-1.591-2.193-10.598-6.863-13.306zm-3.137-2.945c.552 0 1 .449 1 1 0 .552-.448 1-1 1s-1-.448-1-1c0-.551.448-1 1-1zm-6.451 16c1.189-1.667 1.605-3.891 1.964-5.815.447-2.39.869-4.648 2.354-5.509 1.38-.801 2.956-.76 4.267 0 1.485.861 1.907 3.119 2.354 5.509.359 1.924.775 4.148 1.964 5.815h-12.903z' />
               </svg>
             </div>
-            <div className='header__logout'>
+            <div onClick={clearToken} className='header__logout'>
               <svg
                 xmlns='http://www.w3.org/2000/svg'
                 width='100%'
@@ -363,6 +261,21 @@ const Header = ({ setSidebarChanged, setSidebarHiden, sidebarChanged, sidebarHid
       </div>
     </header>
   );
+};
+
+Header.propTypes = {
+  visibleInfo: PropTypes.bool,
+  visibleSettings: PropTypes.bool,
+  visibleMessages: PropTypes.bool,
+  visibleTickets: PropTypes.bool,
+  toggleVisibleTickets: PropTypes.func,
+  toggleVisibleMessages: PropTypes.func,
+  toggleVisibleSettings: PropTypes.func,
+  toggleVisibleInfo: PropTypes.func,
+  toggleSidebarChange: PropTypes.func,
+  toggleDefaultSidebar: PropTypes.func,
+  toggleSidebarHiden: PropTypes.func,
+  toggleDefaultHidenSidebar: PropTypes.func,
 };
 
 export default Header;

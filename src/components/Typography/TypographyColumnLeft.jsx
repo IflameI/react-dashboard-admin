@@ -1,5 +1,6 @@
 import React from 'react';
 import { ArrowDown, useFuncBlock } from '../../components';
+import PropTypes from 'prop-types';
 
 const TypographyColumnLeft = () => {
   const { closedBlock, turnedBlock, toggleClosedBlock, toggleTurnedBlock } = useFuncBlock(false);
@@ -79,6 +80,13 @@ const TypographyColumnLeft = () => {
       </div>
     </div>
   );
+};
+
+TypographyColumnLeft.propTypes = {
+  closedBlock: PropTypes.bool,
+  turnedBlock: PropTypes.bool,
+  toggleClosedBlock: PropTypes.func,
+  toggleTurnedBlock: PropTypes.func,
 };
 
 export default TypographyColumnLeft;

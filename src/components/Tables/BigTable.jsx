@@ -1,32 +1,34 @@
 import React from 'react';
 import { CogWheelIcon, useFuncBlock } from '../../components';
+import PropTypes from 'prop-types';
+
 const BigTable = () => {
   const { closedBlock, toggleClosedBlock } = useFuncBlock(false);
 
   return (
-    <div class='table__column'>
-      <div style={{ display: closedBlock ? 'none' : '' }} class='table__item'>
-        <div class='table__head header__global'>
-          <h5 class='table__title'>
+    <div className='table__column'>
+      <div style={{ display: closedBlock ? 'none' : '' }} className='table__item'>
+        <div className='table__head header__global'>
+          <h5 className='table__title'>
             Table <small>Styles</small>
           </h5>
-          <div class='table__icons'>
+          <div className='table__icons'>
             <button>
               <CogWheelIcon />
             </button>
             <button onClick={toggleClosedBlock}>x</button>
           </div>
         </div>
-        <table class='table-main'>
+        <table className='table-main'>
           <thead>
-            <tr class='table-main__head'>
-              <th class='table-main__title'>#</th>
+            <tr className='table-main__head'>
+              <th className='table-main__title'>#</th>
               <th>Picture</th>
               <th>Description</th>
-              <th class='table-main__title'>Info</th>
-              <th class='table-main__title'>Date</th>
-              <th class='table-main__title'>Size</th>
-              <th class='table-main__title'>Status</th>
+              <th className='table-main__title'>Info</th>
+              <th className='table-main__title'>Date</th>
+              <th className='table-main__title'>Size</th>
+              <th className='table-main__title'>Status</th>
             </tr>
           </thead>
           <tbody>
@@ -34,7 +36,7 @@ const BigTable = () => {
               <td>1</td>
               <td>
                 <img
-                  class='table-main__img'
+                  className='table-main__img'
                   src='https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDd8fHxlbnwwfHx8fA%3D%3D&w=1000&q=80'
                   alt=''
                   height='50'></img>
@@ -52,11 +54,11 @@ const BigTable = () => {
                   </small>
                 </p>
               </td>
-              <td class='text-muted'>September 14, 2012</td>
-              <td class='text-muted'>45.6 KB</td>
-              <td class='width-150'>
-                <div class='progress-bar'>
-                  <span class='progress-bar-fill' style={{ width: '75%' }}></span>
+              <td className='text-muted'>September 14, 2012</td>
+              <td className='text-muted'>45.6 KB</td>
+              <td className='width-150'>
+                <div className='progress-bar'>
+                  <span className='progress-bar-fill' style={{ width: '75%' }}></span>
                 </div>
               </td>
             </tr>
@@ -65,7 +67,7 @@ const BigTable = () => {
               <td>2</td>
               <td>
                 <img
-                  class='table-main__img'
+                  className='table-main__img'
                   src='https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDd8fHxlbnwwfHx8fA%3D%3D&w=1000&q=80'
                   alt=''
                   height='50'></img>
@@ -83,11 +85,11 @@ const BigTable = () => {
                   </small>
                 </p>
               </td>
-              <td class='text-muted'>November 14, 2012</td>
-              <td class='text-muted'>15.3 MB</td>
-              <td class='width-150'>
-                <div class='progress-bar'>
-                  <span class='progress-bar-fill' style={{ width: '75%' }}></span>
+              <td className='text-muted'>November 14, 2012</td>
+              <td className='text-muted'>15.3 MB</td>
+              <td className='width-150'>
+                <div className='progress-bar'>
+                  <span className='progress-bar-fill' style={{ width: '75%' }}></span>
                 </div>
               </td>
             </tr>
@@ -95,7 +97,7 @@ const BigTable = () => {
               <td>3</td>
               <td>
                 <img
-                  class='table-main__img'
+                  className='table-main__img'
                   src='https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDd8fHxlbnwwfHx8fA%3D%3D&w=1000&q=80'
                   alt=''
                   height='50'></img>
@@ -113,11 +115,11 @@ const BigTable = () => {
                   </small>
                 </p>
               </td>
-              <td class='text-muted'>September 14, 2012</td>
-              <td class='text-muted'>49.0 KB</td>
-              <td class='width-150'>
-                <div class='progress-bar'>
-                  <span class='progress-bar-fill' style={{ width: '75%' }}></span>
+              <td className='text-muted'>September 14, 2012</td>
+              <td className='text-muted'>49.0 KB</td>
+              <td className='width-150'>
+                <div className='progress-bar'>
+                  <span className='progress-bar-fill' style={{ width: '75%' }}></span>
                 </div>
               </td>
             </tr>
@@ -125,7 +127,7 @@ const BigTable = () => {
               <td>4</td>
               <td>
                 <img
-                  class='table-main__img'
+                  className='table-main__img'
                   src='https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDd8fHxlbnwwfHx8fA%3D%3D&w=1000&q=80'
                   alt=''
                   height='50'></img>
@@ -143,11 +145,11 @@ const BigTable = () => {
                   </small>
                 </p>
               </td>
-              <td class='text-muted'>September 15, 2012</td>
-              <td class='text-muted'>69.1 KB</td>
-              <td class='width-150'>
-                <div class='progress-bar'>
-                  <span class='progress-bar-fill' style={{ width: '75%' }}></span>
+              <td className='text-muted'>September 15, 2012</td>
+              <td className='text-muted'>69.1 KB</td>
+              <td className='width-150'>
+                <div className='progress-bar'>
+                  <span className='progress-bar-fill' style={{ width: '75%' }}></span>
                 </div>
               </td>
             </tr>
@@ -155,7 +157,7 @@ const BigTable = () => {
               <td>5</td>
               <td>
                 <img
-                  class='table-main__img'
+                  className='table-main__img'
                   src='https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDd8fHxlbnwwfHx8fA%3D%3D&w=1000&q=80'
                   alt=''
                   height='50'></img>
@@ -173,22 +175,25 @@ const BigTable = () => {
                   </small>
                 </p>
               </td>
-              <td class='text-muted'>October 01, 2012</td>
-              <td class='text-muted'>2.3 MB</td>
-              <td class='width-150'>
-                <div class='progress-bar'>
-                  <span class='progress-bar-fill' style={{ width: '75%' }}></span>
+              <td className='text-muted'>October 01, 2012</td>
+              <td className='text-muted'>2.3 MB</td>
+              <td className='width-150'>
+                <div className='progress-bar'>
+                  <span className='progress-bar-fill' style={{ width: '75%' }}></span>
                 </div>
               </td>
             </tr>
           </tbody>
         </table>
-        <div class='table__footer'>
+        <div className='table__footer'>
           <p>Basic table with styled content</p>
         </div>
       </div>
     </div>
   );
 };
-
+BigTable.propTypes = {
+  closedBlock: PropTypes.bool,
+  toggleClosedBlock: PropTypes.func,
+};
 export default BigTable;

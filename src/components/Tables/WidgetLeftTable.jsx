@@ -1,33 +1,35 @@
 import React from 'react';
 import { CogWheelIcon, useFuncBlock } from '../../components';
+import PropTypes from 'prop-types';
+
 const WidgetLeftTable = () => {
   const { closedBlock, toggleClosedBlock } = useFuncBlock(false);
   return (
-    <div class='widgets-table__column'>
+    <div className='widgets-table__column'>
       <div
         style={{ display: closedBlock ? 'none' : '' }}
-        class='widgets-table__wrapper wrapper-global'>
-        <div class='widgets-table__item'>
-          <div class='widgets-table__top'>
-            <div class='widgets-table__head header__global'>
-              <h5 class='widgets-table__title'>
+        className='widgets-table__wrapper wrapper-global'>
+        <div className='widgets-table__item'>
+          <div className='widgets-table__top'>
+            <div className='widgets-table__head header__global'>
+              <h5 className='widgets-table__title'>
                 Table <small>Styles</small>
               </h5>
-              <div class='widgets-table__icons'>
+              <div className='widgets-table__icons'>
                 <button>
                   <CogWheelIcon />
                 </button>
                 <button onClick={toggleClosedBlock}>x</button>
               </div>
             </div>
-            <h3 class='widgets-table__subtitle'>Stripped Table</h3>
-            <p class='widgets-table__text'>
+            <h3 className='widgets-table__subtitle'>Stripped Table</h3>
+            <p className='widgets-table__text'>
               Each row is highlighted. You will never lost there. Just
               <code>.table-striped</code> it.
             </p>
           </div>
-          <div class='widgets-table__content'>
-            <table class='widgets-table__main table-striped table'>
+          <div className='widgets-table__content'>
+            <table className='widgets-table__main table-striped table'>
               <thead>
                 <tr>
                   <th>#</th>
@@ -39,63 +41,59 @@ const WidgetLeftTable = () => {
               <tbody>
                 <tr>
                   <td>
-                    <div class='abc-checkbox'>
-                      <input
-                        id='checkbox2'
-                        type='checkbox'
-                        class='form-check-input'
-                        checked=''></input>
-                      <label for='checkbox2' class=''></label>
+                    <div className='abc-checkbox'>
+                      <input id='checkbox2' type='checkbox' className='form-check-input'></input>
+                      <label></label>
                     </div>
                   </td>
                   <td>Mark</td>
                   <td>Otto</td>
                   <td>
-                    <span class='badge badge-danger'>Online</span>
+                    <span className='badge badge-danger'>Online</span>
                   </td>
                 </tr>
                 <tr>
                   <td>
-                    <div class='abc-checkbox'>
-                      <input id='checkbox3' type='checkbox' class='form-check-input'></input>
-                      <label for='checkbox3' class=''></label>
+                    <div className='abc-checkbox'>
+                      <input id='checkbox3' type='checkbox' className='form-check-input'></input>
+                      <label className=''></label>
                     </div>
                   </td>
                   <td>
                     Jacob
-                    <span class='ml-2 badge badge-warning'>ALERT!</span>
+                    <span className='ml-2 badge badge-warning'>ALERT!</span>
                   </td>
                   <td>Thornton</td>
                   <td>
-                    <span class='badge badge-gray'>Away</span>
+                    <span className='badge badge-gray'>Away</span>
                   </td>
                 </tr>
                 <tr>
                   <td>
-                    <div class='abc-checkbox'>
-                      <input id='checkbox4' type='checkbox' class='form-check-input'></input>
-                      <label for='checkbox4' class=''></label>
+                    <div className='abc-checkbox'>
+                      <input id='checkbox4' type='checkbox' className='form-check-input'></input>
+                      <label className=''></label>
                     </div>
                   </td>
                   <td>Larry</td>
                   <td>the Bird</td>
                   <td>
-                    <span class='badge badge-danger'>Construct</span>
+                    <span className='badge badge-danger'>Construct</span>
                   </td>
                 </tr>
               </tbody>
             </table>
           </div>
         </div>
-        <div class='widgets-table__item'>
-          <div class='widgets-table__top'>
-            <h3 class='widgets-table__subtitle'>Hover Table</h3>
-            <p class='widgets-table__text'>
+        <div className='widgets-table__item'>
+          <div className='widgets-table__top'>
+            <h3 className='widgets-table__subtitle'>Hover Table</h3>
+            <p className='widgets-table__text'>
               Trace only what's really important. <code>.table-hover</code> is made for it.
             </p>
           </div>
-          <div class='widgets-table__content'>
-            <table class='widgets-table__main table-striped table table-hover'>
+          <div className='widgets-table__content'>
+            <table className='widgets-table__main table-striped table table-hover'>
               <thead>
                 <tr>
                   <th>#</th>
@@ -112,7 +110,7 @@ const WidgetLeftTable = () => {
                   <td>Otto</td>
                   <td>ottoto@example.com</td>
                   <td>
-                    <span class='badge badge-gray'>Pending</span>
+                    <span className='badge badge-gray'>Pending</span>
                   </td>
                 </tr>
                 <tr>
@@ -121,7 +119,7 @@ const WidgetLeftTable = () => {
                   <td>Thornton</td>
                   <td>fat.thor@example.com</td>
                   <td>
-                    <span class='badge badge-primary'>New</span>
+                    <span className='badge badge-primary'>New</span>
                   </td>
                 </tr>
                 <tr>
@@ -130,7 +128,7 @@ const WidgetLeftTable = () => {
                   <td>the Bird</td>
                   <td>larry@example.com</td>
                   <td>
-                    <span class='badge badge-green'>Active</span>
+                    <span className='badge badge-green'>Active</span>
                   </td>
                 </tr>
                 <tr>
@@ -139,7 +137,7 @@ const WidgetLeftTable = () => {
                   <td>Horadnia</td>
                   <td>peter@example.com</td>
                   <td>
-                    <span class='badge badge-gray'>Unconfirmed</span>
+                    <span className='badge badge-gray'>Unconfirmed</span>
                   </td>
                 </tr>
               </tbody>
@@ -150,5 +148,8 @@ const WidgetLeftTable = () => {
     </div>
   );
 };
-
+WidgetLeftTable.propTypes = {
+  closedBlock: PropTypes.bool,
+  toggleClosedBlock: PropTypes.func,
+};
 export default WidgetLeftTable;

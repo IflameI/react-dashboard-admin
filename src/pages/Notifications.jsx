@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { useFuncBlock } from '../components';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import PropTypes from 'prop-types';
+
 const Notifications = () => {
   const { closedBlock, toggleClosedBlock } = useFuncBlock(false);
   const [positionNotify, setPositionNotify] = useState('top-right');
@@ -128,5 +130,8 @@ const Notifications = () => {
     </>
   );
 };
-
+Notifications.propTypes = {
+  closedBlock: PropTypes.bool,
+  toggleClosedBlock: PropTypes.func,
+};
 export default Notifications;

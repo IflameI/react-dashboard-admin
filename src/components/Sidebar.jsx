@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavSite } from '.';
 
-const Sidebar = ({ sidebarChanged }) => {
+const Sidebar = () => {
   return (
     <aside className='sidebar'>
       <div className='sidebar__logo'>REACT-DASHBOARD</div>

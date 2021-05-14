@@ -10,6 +10,7 @@ import {
 } from '.';
 import ReactTooltip from 'react-tooltip';
 import classNames from 'classnames';
+import PropTypes from 'prop-types';
 
 const ContentMain = () => {
   const [mapContent, setMapContent] = useState('');
@@ -68,5 +69,10 @@ const ContentMain = () => {
     </>
   );
 };
-
+ContentMain.propTypes = {
+  refreshedBlock: PropTypes.bool,
+  closedBlock: PropTypes.bool,
+  toggleRefreshedBlock: PropTypes.func,
+  toggleClosedBlock: PropTypes.func,
+};
 export default ContentMain;
