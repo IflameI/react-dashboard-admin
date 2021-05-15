@@ -1,7 +1,6 @@
 const express = require('express');
 const cors = require('cors');
 const app = express();
-const path = require('path');
 
 app.use(cors());
 
@@ -11,12 +10,13 @@ app.use('/login', (req, res) => {
   });
 });
 
+const path = require('path');
 if (process.env.NODE_ENV === 'production') {
-  // Обслуживаем любые статические файлы
-  app.use(express.static(path.join(__dirname, 'client / build')));
-  // Обработка маршрутизации React, возврат всех запросов в приложение React
+  // Serve any static files
+  app.use(express.static(path.join(__dirname, 'client/build')));
+  // Handle React routing, return all requests to React app
   app.get('*', function (req, res) {
-    res.sendFile(path.join(__dirname, 'client / build', 'index.html'));
+    res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
   });
 }
 
