@@ -23,3 +23,6 @@ react-toastify
 react-tooltip
 
 react-simple-maps
+
+
+![Image of project](https://github.com/IflameI/react-dashboard-admin/blob/main/Screenshot_1.png)
